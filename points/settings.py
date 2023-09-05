@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     # loclal_app
     'accounts',
     'pages',
+    'classManagement',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,14 @@
+{% extends '_base.html' %}
+
+{% block title %}لیست دانش آموزان دوره {{ courses.name }}{% endblock title %}
+
+{% block content %}
+    <div class="book-detail">
+        <h2>لیست دانش آموزان دوره {{ courses.name }}</h2>
+        <div>
+            {% for object in courses.student.all %}
+                <a>{{ object.courses_name }} {{ object.first_name }} {{ object.last_name }} {{ object.father_name }} {{ object.national_id }} </a></br>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

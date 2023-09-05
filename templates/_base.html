@@ -6,13 +6,13 @@
 <body>
     <div class="container">
         <nav>
-            <a href="{% url 'home' %}">Home</a>
-            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'home' %}">خانه</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="{% url 'about' %}">درباره ما</a>&nbsp;&nbsp;&nbsp;&nbsp;
             {% if user.is_authenticated %}
-                <a href="{% url 'account_logout' %}">Log Out</a>
+                <a href="{% url 'account_logout' %}">خروج از حساب کاربری</a>&nbsp;&nbsp;&nbsp;&nbsp;
             {% else %}
-                <a href="{% url 'account_login' %}">Log In</a>
-                <a href="{% url 'account_signup' %}">Sign Up</a>
+                <a href="{% url 'account_login' %}">وارد شوید</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="{% url 'account_signup' %}">ایجاد حساب کاربری</a>&nbsp;&nbsp;&nbsp;&nbsp;
             {% endif %}
         </nav>
         {% block content %}

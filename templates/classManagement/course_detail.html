@@ -1,0 +1,15 @@
+{% extends '_base.html' %}
+
+{% block title %}{{ courses.name }}{% endblock title %}
+
+{% block content %}
+    <div>
+        <h2>{{ courses.name }}</h2>
+        <a href="{% url 'student_create' object.pk %}">اضافه کردن دانش آموز</a></br>
+        <a href="{% url 'student_list' object.pk %}" >لیست دانش آموزان</a></br>
+        <a>نمرات</a></br>
+        <a>دریافت نتایج</a></br></br></br>
+        <a>تمرین ها و آزمون ها</a></br>
+        <a href="{{request.META.HTTP_REFERER}}">برگشت</a>
+    </div>
+{% endblock content %}

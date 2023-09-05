@@ -6,16 +6,18 @@
 {% block title %}Home{% endblock title %}
 
 {% block content %}
-    <h1>Homepage</h1>
+    <h1>خانه</h1>
     {% if user.is_authenticated %}
-        <p>Hi {{ user.email }}!</p>
-        <p><a href="{% url 'account_logout' %}">Log Out</a></p>
+        <p>سلام {{ user.email }}!</p></br>
+        <p><a href="{% url 'course_create' %}">اضافه کردن دوره</a></p>
+        <p><a href="{% url 'course_list' %}">لیست دوره ها</a></p>        
+        <p><a href="{% url 'account_logout' %}">خروج از حساب کاربری</a></p>
     {% else %}
         <p>You are not logged in</p>
         <p>
-            <a href="{% url 'account_login' %}">Log In</a>
-            <a href="{% provider_login_url 'google' %}">Login with Google</a>
-            <a href="{% url 'account_signup' %}">Sign Up</a>
+            <a href="{% url 'account_login' %}">وارد شوید</a>
+            {% comment %} <a href="{% provider_login_url 'google' %}"> Login with Google</a> {% endcomment %}
+            <p>حساب کاربری ندارید؟ <a href="{% url 'account_signup' %}">ایجاد حساب</a><p>
         </p>
     {% endif %}
 {% endblock content %}
