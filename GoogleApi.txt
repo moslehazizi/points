@@ -1,3 +1,0 @@
-159905619844-qjep003h1ilnbb63ktjvtb7m53erdgid.apps.googleusercontent.com   ====> Client ID
-
-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  ====> Client secret
