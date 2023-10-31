@@ -7,6 +7,9 @@ name = "pypi"
 django-allauth = "*"
 django-crispy-forms = "*"
 crispy-bootstrap4 = "*"
+django-registration = "*"
+django-extensions = "*"
+reportlab = "*"
 
 [dev-packages]
 

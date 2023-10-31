@@ -1,0 +1,18 @@
+{% extends "_base.html" %}
+
+<html>
+    <head>
+        {% block title %}Messages{% endblock %}
+    </head>
+    <body>
+        {% block content %}
+            <div class='container'>
+                <ul>
+                    <li><a href="{% url 'message_create' %}?next={{ request.path }}">Send new message</a></li>
+                    <li><a href="{% url 'received_message_list' %}">Inbox</a></li>
+                    <li><a href="{% url 'sent_message_list' %}">Sent messages</a></li>
+                </ul>
+            </div>
+        {% endblock content %}
+    </body>
+</html>

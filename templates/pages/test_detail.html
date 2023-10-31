@@ -1,0 +1,32 @@
+{% extends "_base.html" %}
+
+<html>
+<head>
+    <title>
+        {% block title %}{{test.title}}{% endblock title %}
+    </title>
+</head>
+
+<body>
+    {% block content %}
+        <div class='container'>
+            <h2>{{test.title}}</h2>
+            
+            <div>
+                <ul>   
+                    {% for student in test.result.all %}
+                        <li>
+                            {{student}}
+                            {% if test.owner == request.user %}
+                                (<a href="{% url 'result_update' student.pk %}?next={{ request.path }}">update</a>)
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <a href="{% url "courses_list" %}" class='btn btn-success'>Go to courses list</a>
+            <a href="{{request.META.HTTP_REFERER}}" class='btn btn-success'>Go back</a>
+        </div>
+    {% endblock content %}
+</body>
+</html>

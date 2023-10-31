@@ -1,0 +1,26 @@
+{% extends "_base.html" %}
+
+<html>
+<head>
+    <title>
+        {% block title %}Files:{% endblock title %}
+    </title>
+</head>
+
+<body>
+    {% block content %}
+        <div class='container'>
+            <ul>
+                {% for f in course.files_to_course.all %}
+                    <li>
+                        <a href="{{ f.file.url }}">{{f}}</a>
+                    </li>
+                {% endfor %}
+                <a href="{% url "sv_course_detail" course.pk %}" class='btn btn-success'>Go to {{course.name}} page</a>
+                <a href="{% url "sv_course_list" %}" class='btn btn-success'>Go to courses list</a>
+                <a href="{{request.META.HTTP_REFERER}}" class='btn btn-success'>Go back</a>
+            </ul>
+        </div>
+    {% endblock content %}
+</body>
+</html>

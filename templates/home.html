@@ -1,16 +1,28 @@
-{% extends '_base.html' %}
+{% extends "_base.html" %}
 
-{% block title %}Home{% endblock title %}
-
-{% block content %}
-    <h1>Homepage</h1>
-    {% if user.is_authenticated %}
-        <p>Hi {{ user.email }}!</p>
-        
-        <p><a href="{% url 'courses_management' %}">Courses Management</a></p>
-    {% else %}
-        <p>You are not logged in</p>
-        <p><a href="{% url 'account_login' %}">Log In</a> |
-        <a href="{% url 'account_signup' %}">Sign Up</a></p>
-    {% endif %}
-{% endblock content %}
+<html>
+    <head>
+        {% block title %}Home{% endblock %}
+    </head>
+    <body>
+        {% block content %}
+            <div class='container'>
+                {% if user.is_authenticated %}
+                {% else %}
+                    <h2>Are you a member?</h2>
+                    <p>&nbsp; &nbsp; This is a tiny course management application. Please signin to use features.</p>
+                {% endif %}
+            </div>
+            <div class='container'>
+                {% for u in user.person_to_user.all %}
+                    {% if user.is_authenticated and u.role == 10 %}
+                            <p>Go to <a href="{% url "courses_list" %}">Courses Management</a></p>
+                    {% elif user.is_authenticated and u.role == 1 %}
+                            <p>Hi {{user.first_name}} {{user.last_name}} Go to your 
+                                <a href="{% url 'home_page' %}">page</a></p>  
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endblock content %}
+    </body>
+</html>

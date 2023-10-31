@@ -1,0 +1,26 @@
+{% extends "_base.html" %}
+
+<html>
+<head>
+    <title>
+        {% block title %}{{article.name}}{% endblock title %}
+    </title>
+</head>
+
+<body>
+    {% block content %}
+        <div class='container'>
+            <h2>{{article.title}}</h2>
+            
+            <div>
+                    <p>{{article.text}}</p></br>
+                    <i>Written by {{article.author}} in {{article.date_creation}}</i>
+                    {% if article.author == request.user %}
+                        (<a href="{% url 'article_update' article.pk %}?next={{ request.path }}">update</a>|<a href="{% url 'article_delete' article.pk %}">delete</a>)</a>
+                    {% endif %}
+            </div>
+            <a href="{{request.META.HTTP_REFERER}}" class='btn btn-success'>Go back</a>
+        </div>
+    {% endblock content %}
+</body>
+</html>

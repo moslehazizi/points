@@ -1,0 +1,30 @@
+{% extends "_base.html" %}
+
+<html>
+<head>
+    <title>
+        {% block title %}Courses list{% endblock title %}
+    </title>
+</head>
+
+<body>
+    {% block content %}
+        <div class='container'>
+            <div>
+                <p>Dear Student go to your course by clicking on it:</p>
+            </div>
+            <ul>
+                {% for course in courses %} 
+                    <li>
+                        <a href="{% url "sv_course_detail" course.pk %}">{{course}}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <div>
+                <p>Message section:</p>
+                <a href="{% url 'message_view' %}">Messages</a>
+            </div>
+        </div>
+    {% endblock content %}
+</body>
+</html>

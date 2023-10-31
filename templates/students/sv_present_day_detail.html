@@ -1,0 +1,29 @@
+{% extends "_base.html" %}
+
+<html>
+<head>
+    <title>
+        {% block title %}Present states{% endblock title %}
+    </title>
+</head>
+
+<body>
+    {% block content %}
+        <div class='container'>
+            <div>
+                <p>Present list in {{daydate.day}} for {{daydate.course}}</p>
+                <p></p>
+            </div>
+            <ol>
+                {% for student in daydate.present_state.all %}
+                    <li>
+                        <a> {{student}}</a>
+                    </li>
+                {% endfor %}
+            </ol>
+            <a href="{% url "sv_course_list" %}" class='btn btn-success'>Go to courses list</a>
+            <a href="{{request.META.HTTP_REFERER}}" class='btn btn-success'>Go back</a>
+        </div>
+    {% endblock content %}
+</body>
+</html>

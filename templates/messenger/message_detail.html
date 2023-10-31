@@ -1,0 +1,22 @@
+{% extends "_base.html" %}
+
+<html>
+<head>
+    <title>
+        {% block title %}Message detail{% endblock title %}
+    </title>
+</head>
+
+<body>
+    {% block content %}
+        <div class='container'>
+            <h2>from {{messagebox.sender}} to {{messagebox.receiver}}</h2>
+            
+            <div>
+                    <p>{{messagebox.content}}</p></br>
+            </div>
+            <a href="{{request.META.HTTP_REFERER}}" class='btn btn-success'>Go back</a>
+        </div>
+    {% endblock content %}
+</body>
+</html>

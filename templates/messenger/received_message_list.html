@@ -1,0 +1,32 @@
+{% extends "_base.html" %}
+
+<html>
+<head>
+    <title>
+        {% block title %}Received messages list{% endblock title %}
+    </title>
+</head>
+
+<body>
+    {% block content %}
+        <div class='container'>
+            <ul>
+                {% for m in mrs %}
+                    <li>
+                        <a href="{% url 'message_detail' m.pk %}">{{m}}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+            {% for u in user.person_to_user.all %}
+                {% if user.is_authenticated and u.role == 1 %}
+                    <a href="{% url "sv_course_list" %}" class='btn btn-success'>Go to courses list</a>
+                {% elif user.is_authenticated and u.role == 10 %}
+                    <p>Go to <a href="{% url "courses_list" %}">Courses Management</a></p>
+                {% endif %}
+            {% endfor %}
+            <a href="{% url 'message_view' %}" class='btn btn-success'>Messages</a>
+            <a href="{{request.META.HTTP_REFERER}}" class='btn btn-success'>Go back</a>
+        </div>
+    {% endblock content %}
+</body>
+</html>

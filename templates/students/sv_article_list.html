@@ -1,0 +1,31 @@
+{% extends "_base.html" %}
+
+<html>
+<head>
+    <title>
+        {% block title %}Articles list{% endblock title %}
+    </title>
+</head>
+
+<body>
+    {% block content %}
+        <div class='container'>
+            <div>
+                <p>Articles:</p>
+                <p></p>
+            </div>
+            <ul>
+                {% for a in course.article_to_course.all %}
+                    <li>
+                        <a href="{% url 'sv_article_detail' a.pk %}"> {{a.title}} written by 
+                            ({{a.author.first_name}} {{a.author.last_name}})  in ({{a.date_creation}}) for {{a.course}} course</a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <a href="{% url "sv_course_detail" course.pk %}" class='btn btn-success'>Go to {{course.name}} page</a>
+            <a href="{% url "sv_course_list" %}" class='btn btn-success'>Go to courses list</a>
+            <a href="{{request.META.HTTP_REFERER}}" class='btn btn-success'>Go back</a>
+        </div>
+    {% endblock content %}
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends "_base.html" %}
+
+<html>
+<head>
+    <title>
+        {% block title %}{{user.first_name}} {{user.last_name}}'s page{% endblock title %}
+    </title>
+</head>
+
+<body>
+    {% block content %}
+        <div class='container'>
+            <div>
+                <ul>
+                    <li><a href="{% url 'sv_course_list' %}">List of courses</a></li>
+                </ul>
+            </div>
+        </div>
+    {% endblock content %}
+</body>
+</html>

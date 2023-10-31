@@ -1,0 +1,24 @@
+{% extends "_base.html" %}
+{% load crispy_forms_tags %}
+
+<html>
+<head>
+    <title>
+        {% block title %}Edit present situation{% endblock title %}
+    </title>
+</head>
+
+<body>
+    {% block content %}
+        <div class='container'>          
+            <h2>Article:</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input type="submit" class="btn btn-success" value="Edit"></br>
+            </form>
+            <a href="{{request.META.HTTP_REFERER}}" class='btn btn-success'>Go back</a>
+        </div>
+    {% endblock content %}
+</body>
+</html>
