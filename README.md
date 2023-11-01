@@ -2,9 +2,9 @@ Points
 
 This is a simple course management web application. included some features.
 
-Teachers can: Create articles for their courses, Do course attendance flow, Insert result for exams, Send message to students, Upload files for their courses.
+Teachers can: Create articles for their courses, Do course attendance flow, Insert result for exams, Send message to students, Upload files of their courses.
 
-Students can: See articles of courses, See results of exams, Download files that teachers uploaded, Sent message to teachers.
+Students can: See articles of courses, See results of exams, Download files that teachers uploaded, Send message to teachers.
 
 setup
 
