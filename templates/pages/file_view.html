@@ -1,19 +1,24 @@
 {% extends "_base.html" %}
 
 <html>
-    <head>
+<head>
+    <title>
         {% block title %}Files management{% endblock %}
-    </head>
-    <body>
-        {% block content %}
-            <div class='container'>
-                <ul>
-                    <li><a href="{% url 'file_create' %}?next={{ request.path }}">Add new file</a></li>
-                    <li><a href="{% url 'file_list' course.pk%}">List of files</a></li>
-                </ul>
-                <a href="{% url "courses_list" %}" class='btn btn-success'>Go to courses list</a>
-                <a href="{{request.META.HTTP_REFERER}}" class='btn btn-success'>Go back</a>
-            </div>
-        {% endblock content %}
-    </body>
+    <title>    
+</head>
+
+<body>
+    {% block content %}
+        <div class='container'>
+            <ul>
+                <li><a href="{% url 'file_create' %}?next={{ request.path }}">Add new file</a></li>
+                <li><a href="{% url 'file_list' course.pk%}">List of files</a></li>
+            </ul>
+            <a href="{% url "course_detail" course.pk %}" class='btn btn-success'>{course.name}}'s page</a>
+            <a href="{% url "courses_list" %}" class='btn btn-success'>List of courses</a>
+            <a href="{{request.META.HTTP_REFERER}}" class='btn btn-success'>Go back</a>
+        </div>
+    {% endblock content %}
+</body>
+
 </html>

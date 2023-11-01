@@ -1,28 +1,35 @@
 {% extends "_base.html" %}
 
 <html>
-    <head>
-        {% block title %}Home{% endblock %}
-    </head>
-    <body>
-        {% block content %}
-            <div class='container'>
-                {% if user.is_authenticated %}
-                {% else %}
-                    <h2>Are you a member?</h2>
-                    <p>&nbsp; &nbsp; This is a tiny course management application. Please signin to use features.</p>
+
+<head>
+    {% block title %}Home{% endblock %}
+</head>
+
+<body>
+    {% block content %}
+        <div class='container'>
+            {% if user.is_authenticated %}
+            {% else %}
+                <h2>Are you a member?</h2>
+                <p>&nbsp; &nbsp; This is a simple course management web application. Please login to see what can it do.</p>
+            {% endif %}
+        </div>
+        <div class='container'>
+            {% for u in user.person_to_user.all %}
+                {% if user.is_authenticated and u.role == 10 %}
+                        <p>Go to List of <a href="{% url "courses_list" %}">courses</a></p>
+                        <div>
+                            <p>Message section:</p>
+                            <a href="{% url 'message_view' %}">Messenger</a>
+                        </div>
+                {% elif user.is_authenticated and u.role == 1 %}
+                        <p>Hi {{user.first_name}} {{user.last_name}}, Go to your 
+                            <a href="{% url 'home_page' %}">courses</a></p>  
                 {% endif %}
-            </div>
-            <div class='container'>
-                {% for u in user.person_to_user.all %}
-                    {% if user.is_authenticated and u.role == 10 %}
-                            <p>Go to <a href="{% url "courses_list" %}">Courses Management</a></p>
-                    {% elif user.is_authenticated and u.role == 1 %}
-                            <p>Hi {{user.first_name}} {{user.last_name}} Go to your 
-                                <a href="{% url 'home_page' %}">page</a></p>  
-                    {% endif %}
-                {% endfor %}
-            </div>
-        {% endblock content %}
-    </body>
+            {% endfor %}
+        </div>
+    {% endblock content %}
+</body>
+
 </html>

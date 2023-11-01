@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>
-        {% block title %}Tests list{% endblock title %}
+        {% block title %}Exams{% endblock title %}
     </title>
 </head>
 
@@ -14,16 +14,12 @@
                 {% for t in course.test_to_course.all %}
                     <li>
                         <a href="{% url 'test_detail' t.pk %}">{{t}}</a>
-                            {% comment %} {% if t.owner == request.user %}
-                                (<a href="#">Edit</a>|<a href="#">Delete</a>)
-                            {% endif %} {% endcomment %}
                     </li></br>
                 {% endfor %}
             </ul>
-                <a href="{% url "course_detail" course.pk %}" class='btn btn-success'>Go to {{course.name}} page</a>
-                <a href="{% url "courses_list" %}" class='btn btn-success'>Go to courses list</a>
-                <a href="{{request.META.HTTP_REFERER}}" class='btn btn-success'>Go back</a>
-            
+            <a href="{% url "course_detail" course.pk %}" class='btn btn-success'>{{course.name}}'s page</a>
+            <a href="{% url "courses_list" %}" class='btn btn-success'>List of exams</a>
+            <a href="{{request.META.HTTP_REFERER}}" class='btn btn-success'>Go back</a>   
         </div>
     {% endblock content %}
 </body>

@@ -20,10 +20,8 @@
                     </li>
                 {% endfor %}
             </ul>
-            <div>
-                <p>Message section:</p>
-                <a href="{% url 'message_view' %}">Messages</a>
-            </div>
+            <a href="{% url "home_page" %}" class='btn btn-success'>Main page</a>
+            <a href="{{request.META.HTTP_REFERER}}" class='btn btn-success'>Go back</a>
         </div>
     {% endblock content %}
 </body>

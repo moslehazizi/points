@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>
-        {% block title %}Present list{% endblock title %}
+        {% block title %}List of students{% endblock title %}
     </title>
 </head>
 
@@ -24,7 +24,7 @@
                     </li>
                 {% endfor %}
             </ol>
-            <a href="{% url "courses_list" %}" class='btn btn-success'>Go to courses list</a>
+            <a href="{% url "courses_list" %}" class='btn btn-success'>List of courses</a>
             <a href="{{request.META.HTTP_REFERER}}" class='btn btn-success'>Go back</a>
         </div>
     {% endblock content %}

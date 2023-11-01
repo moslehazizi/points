@@ -15,13 +15,15 @@
                 <ul>
                     <li><a href="{% url "article_create" %}?next={{ request.path }}">Create an article</a></li>
                     <li><a href="{% url "article_list" course.pk%}">List of articles</a></li>
-                    <li><a href="{% url "course_date_list" %}">Course Date list</a></li>
-                    <li><a href="{% url 'file_view' course.pk %}">Practice files</a></li>
-                    <li><a href="{% url 'student_list_view' course.pk %}">student list</a></li>
-                    <li><a href="{% url 'student_list' course.pk %}">Get Students list as pdf</a></li>
-                    <li><a href="{% url 'test_view' course.pk %}">Tests</a></li>
+                    <li><a href="{% url "course_date_list" course.pk%}">Course days</a></li>
+                    <li><a href="{% url 'file_view' course.pk %}">Files</a></li>
+                    <li><a href="{% url 'student_list_view' course.pk %}">List of students</a></li>
+                    <li><a href="{% url 'student_list' course.pk %}">Get list of student as pdf</a></li>
+                    <li><a href="{% url 'test_view' course.pk %}">Exams</a></li>
                 </ul>
             </div>
+            <a href="{% url "courses_list" %}" class='btn btn-success'>List of courses</a>
+            <a href="{{request.META.HTTP_REFERER}}" class='btn btn-success'>Go back</a>
         </div>
     {% endblock content %}
 </body>

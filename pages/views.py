@@ -108,14 +108,13 @@ class PresentUpdateView(LoginRequiredMixin, generic.UpdateView):
     def get_queryset(self):
         return StudentPresent.objects.filter(owner=self.request.user)
     
-class CourseDateListView(LoginRequiredMixin, generic.ListView):
+class CourseDateListView(LoginRequiredMixin, generic.DetailView):
 
-    model = DayDate
+    model = Course
     template_name = 'pages/course_date_list.html'
-    context_object_name = 'dates'
 
     def get_queryset(self):
-        return DayDate.objects.filter(owner=self.request.user)
+        return Course.objects.filter(owner=self.request.user)
 
 class FileDetailView(LoginRequiredMixin, generic.DetailView):
     
@@ -174,7 +173,7 @@ class PdfStudentListView(LoginRequiredMixin, generic.DetailView):
         buffer = BytesIO()
         self = canvas.Canvas(buffer)
 
-        self.drawString(100, 750, "Students list")
+        self.drawString(100, 750, "List of students:")
         y = 700
         self.drawString(30, y, f'{Course.name}')
         self.drawString(30, y - 20, f'{Course.student}')

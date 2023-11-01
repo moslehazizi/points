@@ -13,6 +13,16 @@
                     <li><a href="{% url 'sent_message_list' %}">Sent messages</a></li>
                 </ul>
             </div>
+            <div class='container'>
+                {% for u in user.person_to_user.all %}
+                    {% if user.is_authenticated and u.role == 1 %}
+                        <a href="{% url "home_page" %}" class='btn btn-success'>Main page</a>
+                    {% elif user.is_authenticated and u.role == 10 %}
+                        <p>Go to <a href="{% url "courses_list" %}">List of courses</a></p>
+                    {% endif %}
+                {% endfor %}
+                <a href="{{request.META.HTTP_REFERER}}" class='btn btn-success'>Go back</a>
+            <div>
         {% endblock content %}
     </body>
 </html>

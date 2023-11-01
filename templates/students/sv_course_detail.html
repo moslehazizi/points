@@ -14,15 +14,11 @@
             <div>
                 <ul>
                     <li><a href="{% url 'sv_article_list' course.pk %}">List of articles</a></li>
-                    <li><a href="{% url "sv_present_day" course.pk %}">Course Date list</a>
-                    <li><a href="{% url "sv_test_list" course.pk %}">Tests</a>
-                    <li><a href="{% url "sv_file_list" course.pk %}">Practice files</a>
-                    {% comment %} <li><a href="{% url "course_date_list" %}">Course Date list</a></li>
-                    <li><a href="{% url 'file_view' course.pk %}">Practice files</a></li>
-                    <li><a href="{% url 'student_list_view' course.pk %}">student list</a></li>
-                    <li><a href="{% url 'student_list' course.pk %}">Get Students list as pdf</a></li>
-                    <li><a href="{% url 'test_view' course.pk %}">Tests</a></li> {% endcomment %}
+                    <li><a href="{% url "sv_present_day" course.pk %}">Course days</a>
+                    <li><a href="{% url "sv_test_list" course.pk %}">Exams</a>
+                    <li><a href="{% url "sv_file_list" course.pk %}">Files</a>
                 </ul>
+                <a href="{% url "home_page" %}" class='btn btn-success'>Main page</a>
             </div>
         </div>
     {% endblock content %}

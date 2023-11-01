@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>
-        {% block title %}Courses list{% endblock title %}
+        {% block title %}List of courses{% endblock title %}
     </title>
 </head>
 
@@ -11,7 +11,7 @@
     {% block content %}
         <div class='container'>
             <div>
-                <p>Dear Teacher go to your course by clicking on it:</p>
+                <p>Dear teacher go to your course by clicking on it:</p>
             </div>
             <ul>
                 {% for course in courses %} 
@@ -20,10 +20,6 @@
                     </li>
                 {% endfor %}
             </ul>
-            <div>
-                <p>Message section:</p>
-                <a href="{% url 'message_view' %}">Messages</a>
-            </div>
         </div>
     {% endblock content %}
 </body>

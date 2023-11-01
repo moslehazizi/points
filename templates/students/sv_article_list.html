@@ -22,8 +22,8 @@
                     </li>
                 {% endfor %}
             </ul>
-            <a href="{% url "sv_course_detail" course.pk %}" class='btn btn-success'>Go to {{course.name}} page</a>
-            <a href="{% url "sv_course_list" %}" class='btn btn-success'>Go to courses list</a>
+            <a href="{% url "sv_course_detail" course.pk %}" class='btn btn-success'>{{course.name}}'s page</a>
+            <a href="{% url "sv_course_list" %}" class='btn btn-success'>List of courses</a>
             <a href="{{request.META.HTTP_REFERER}}" class='btn btn-success'>Go back</a>
         </div>
     {% endblock content %}
