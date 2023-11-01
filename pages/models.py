@@ -56,6 +56,10 @@ class Course(models.Model):
     
 class PracticeFile(models.Model):
 
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False)
     title = models.CharField(max_length=255)
     course = models.ForeignKey(
         Course,
@@ -202,6 +206,10 @@ class DayDate(models.Model):
     
 class MessageBox(models.Model):
 
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False)
     sender = models.ForeignKey(
         User,
         related_name='message_sender_to_user',
