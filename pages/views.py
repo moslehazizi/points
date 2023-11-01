@@ -44,14 +44,13 @@ class ArticleCreateView(LoginRequiredMixin, generic.CreateView):
 
     model = Article
     template_name = 'pages/article_create.html'
-    fields = ('title', 'text', )
+    fields = ('title', 'course', 'text', )
 
     def get_success_url(self):
         return self.request.GET.get('next')
 
     def form_valid(self, form):
         form.instance.author = self.request.user
-        form.instance.course = get_object_or_404(Course.objects.filter(owner=self.request.user))
         return super(ArticleCreateView, self).form_valid(form)
 
 class ArticleListView(LoginRequiredMixin, generic.DetailView):
@@ -125,14 +124,14 @@ class FileCreateView(LoginRequiredMixin, generic.CreateView):
 
     model = PracticeFile
     template_name = 'pages/file_create.html'
-    fields = ('title', 'file',)
+    fields = ('title', 'course', 'file',)
 
     def get_success_url(self):
         return self.request.GET.get('next')
 
     def form_valid(self, form):
         form.instance.owner = self.request.user
-        form.instance.course = get_object_or_404(Course.objects.filter(owner=self.request.user))
+        form.instance.course = Course.objects.all()
         return super(FileCreateView, self).form_valid(form)
     
 class FileListView(LoginRequiredMixin, generic.DetailView):

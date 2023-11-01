@@ -15,6 +15,7 @@
             <p>Are you sure you want to delete "{{ article.title }}"?</p>
             <input type="submit" value="Confirm" class="btn btn-danger">
         </form>
+        <a href="{{request.META.HTTP_REFERER}}" class='btn btn-success'>Go back</a>
     {% endblock content %}
 </body>
 </html>
