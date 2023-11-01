@@ -1,8 +1,8 @@
 username,email,password,first_name,last_name
-3750415265,arman@email.com,testpass123,آرمان,معروفی
-3750415269,nima@email.com,testpass123,نیما,محمدی
-3750148963,soran@email.com,testpass123,سوران,مجیدنژاد
-3750126359,nimach@email.com,testpass123,نیما,چوگلی
-3750458963,dler@email.com,testpass123,دلیر,شریفی
-3760451265,azad@email.com,testpass123,آزاد,ابراهیمی
-3760459687,sedigh@email.com,testpass123,صدیق,خوش سیما
+1111111111,user1@email.com,testpass123,testname1,testlastname1
+2222222222,user2@email.com,testpass123,testname2,testlastname2
+3333333333,user3@email.com,testpass123,testname3,testlastname3
+4444444444,user4@email.com,testpass123,testname4,testlastname4
+5555555555,user5@email.com,testpass123,testname5,testlastname5
+6666666666,user6@email.com,testpass123,testname6,testlastname6
+7777777777,user7@email.com,testpass123,testname7,testlastname7
