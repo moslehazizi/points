@@ -1,4 +1,5 @@
 from typing import Any
+from django.db import models
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin 
 from django.conf import settings
@@ -16,6 +17,7 @@ from . models import (
     Test,
     Result,
 )
+from .forms import ArticleForm, FileForm
 
 User = settings.AUTH_USER_MODEL
 
@@ -44,15 +46,18 @@ class ArticleCreateView(LoginRequiredMixin, generic.CreateView):
 
     model = Article
     template_name = 'pages/article_create.html'
-    fields = ('title', 'course', 'text', )
+    form_class = ArticleForm
 
     def get_success_url(self):
         return self.request.GET.get('next')
-
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super(ArticleCreateView, self).form_valid(form)
-
+    def get_form_kwargs(self):
+        kwargs = super(ArticleCreateView, self).get_form_kwargs()
+        kwargs.update({'owner_id': self.request.user})
+        return kwargs
+    
 class ArticleListView(LoginRequiredMixin, generic.DetailView):
 
     model = Course
@@ -124,14 +129,16 @@ class FileCreateView(LoginRequiredMixin, generic.CreateView):
 
     model = PracticeFile
     template_name = 'pages/file_create.html'
-    fields = ('title', 'course', 'file',)
+    form_class = FileForm
 
     def get_success_url(self):
         return self.request.GET.get('next')
-
+    def get_form_kwargs(self):
+        kwargs = super(FileCreateView, self).get_form_kwargs()
+        kwargs.update({'owner_id': self.request.user})
+        return kwargs
     def form_valid(self, form):
         form.instance.owner = self.request.user
-        form.instance.course = Course.objects.all()
         return super(FileCreateView, self).form_valid(form)
     
 class FileListView(LoginRequiredMixin, generic.DetailView):
