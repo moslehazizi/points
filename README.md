@@ -32,15 +32,14 @@ To check admin panel create a super user:
 	(env)$ python manage.py createsuperuser
 
 Add your username, email and password to log in to django admin panel after running the project.
-Insert data from csv files by run scripts, So:
+Insert data from csv files by running scripts, So:
 
 	(env)$ python manage.py runscript user_load
  	(env)$ python manage.py runscript course_load
   	(env)$ python manage.py runscript day_load
    	(env)$ python manage.py runscript dp_load
 
-Run server to use project in your localhost:
-
+Now:
 	(env)$ python manage.py runserver
 
 And navigate to http://127.0.0.1:8000/.
