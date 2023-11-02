@@ -1,14 +1,12 @@
 from typing import Any
-from django.db import models
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin 
 from django.conf import settings
-from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.http import FileResponse, HttpRequest
 from reportlab.pdfgen import canvas
 from io import BytesIO
-from . models import (
+from .models import (
     Course,
     Article,
     DayDate,
@@ -178,11 +176,12 @@ class PdfStudentListView(LoginRequiredMixin, generic.DetailView):
         
         buffer = BytesIO()
         self = canvas.Canvas(buffer)
-
+        cn = Course.name
+        cs = Course.student
         self.drawString(100, 750, "List of students:")
         y = 700
-        self.drawString(30, y, f'{Course.name}')
-        self.drawString(30, y - 20, f'{Course.student}')
+        self.drawString(30, y, f'{cn}')
+        self.drawString(30, y - 20, f'{cs}')
         y -= 60
     
         self.showPage()
