@@ -23,8 +23,38 @@ Then install the dependencies:
 	(env)$ pip install -r requirements.txt
 	
 Note the (env) in front of the prompt. This indicates that this terminal session operates in a virtual environment set up by virtualenv.
-Once pip has finished downloading the dependencies:
+Once pip has finished downloading the dependencies migrate models to your database:
+
+ 	(env)$ python manage.py migrate
+
+To check admin panel create a super user:
+
+	(env)$ python manage.py createsuperuser
+
+Add your username, email and password to log in to django admin panel after running the project.
+Insert data from csv files by run scripts, So:
+
+	(env)$ python manage.py runscript user_load
+ 	(env)$ python manage.py runscript course_load
+  	(env)$ python manage.py runscript day_load
+   	(env)$ python manage.py runscript dp_load
+
+Run server to use project in your localhost:
 
 	(env)$ python manage.py runserver
-	
+
 And navigate to http://127.0.0.1:8000/.
+
+You can log in as teacher by:
+
+ 	username: 1111111111
+  	password: testpass123
+   
+Log in as student by:
+
+	username: 3333333333
+ 	password: testpass123
+
+
+
+
