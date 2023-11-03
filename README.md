@@ -1,10 +1,8 @@
 Points
 
-This is a simple course management web application. included some features.
-
-Teachers can: Create articles for their courses, Do course attendance flow, Insert result for exams, Send message to students, Upload files of their courses.
-
-Students can: See articles of courses, See results of exams, Download files that teachers uploaded, Send message to teachers.
+This is a simple course management web application. It comes with basic build-in features that every course management system should have. included:
+	Instructors can: Create articles for their courses, Do course attendance flow, Insert result for exams, Send message to students, Upload 	files of their courses such as book, article, animations and ect.	
+	Learners can: See articles of courses, See results of exams, Download files that teachers uploaded, Send message to teachers.
 
 setup
 
@@ -48,12 +46,12 @@ Now:
 
 And navigate to http://127.0.0.1:8000/.
 
-You can log in as teacher:
+You can log in as instructor:
 
  	username: 1111111111
   	password: testpass123
    
-Log in as student:
+Log in as learner:
 
 	username: 3333333333
  	password: testpass123
