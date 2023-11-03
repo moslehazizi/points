@@ -1,5 +1,5 @@
 username,email,password,first_name,last_name,role,father_name,phone_number
-1111111111,user1@email.com,testpass123,testname1,testlastname1,T,testfathername1,123456789
-2222222222,user2@email.com,testpass123,testname2,testlastname2,T,testfathername2,12345678
-3333333333,user3@email.com,testpass123,testname3,testlastname3,S,testfathername3,1234567
-4444444444,user4@email.com,testpass123,testname4,testlastname4,S,testfathername4,123456
+1111111111,user1@email.com,testpass123,testfirstname1,testlastname1,T,testfathername1,123456789
+2222222222,user2@email.com,testpass123,testfirstname2,testlastname2,T,testfathername2,12345678
+3333333333,user3@email.com,testpass123,testfirstname3,testlastname3,S,testfathername3,1234567
+4444444444,user4@email.com,testpass123,testfirstname4,testlastname4,S,testfathername4,123456

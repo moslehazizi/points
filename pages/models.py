@@ -148,6 +148,7 @@ class Test(models.Model):
         Result,
         related_name='test_to_result',
     )
+    day = models.DateField()
 
     def __str__(self):
         return f'{self.title} {self.course}'

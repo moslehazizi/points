@@ -17,7 +17,7 @@
             <ol>
                 {% for student in daydate.present_state.all %}
                     <li>
-                        <a> {{student}}</a> | 
+                        <a> {{student.student.first_name}} {{student.student.last_name}} _ Present: {{student.present}}</a> | 
                         {% if daydate.owner == request.user %}
                             (<a href="{% url 'present_update' student.pk %}?next={{ request.path }}">Edit</a>)
                         {% endif %}

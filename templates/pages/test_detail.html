@@ -15,7 +15,7 @@
                 <ul>   
                     {% for student in test.result.all %}
                         <li>
-                            {{student}}
+                            {{student.student_select.first_name}} {{student.student_select.last_name}} _ Result: {{student.result}}
                             {% if test.owner == request.user %}
                                 (<a href="{% url 'result_update' student.pk %}?next={{ request.path }}">update</a>)
                             {% endif %}
