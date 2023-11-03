@@ -17,7 +17,7 @@
             <ol>
                 {% for student in daydate.present_state.all %}
                     <li>
-                        <a> {{student}}</a>
+                        <a>{{student.student.first_name}} {{student.student.last_name}} _ Present: {{student.present}}</a>
                     </li>
                 {% endfor %}
             </ol>
