@@ -40,6 +40,7 @@ Insert data from csv files by running scripts, So:
    	(env)$ python manage.py runscript dp_load
 
 Now:
+
 	(env)$ python manage.py runserver
 
 And navigate to http://127.0.0.1:8000/.
