@@ -38,8 +38,9 @@ Insert data from csv files by running scripts, So:
  	(env)$ python manage.py runscript course_load
   	(env)$ python manage.py runscript day_load
    	(env)$ python manage.py runscript dp_load
-    	(env)$ python manage.py runscript result_load
-     	(env)$ python manage.py runscript exam_load
+    (env)$ python manage.py runscript result_load
+    (env)$ python manage.py runscript exam_load
+	
 
 Now:
 
