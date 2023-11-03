@@ -1,8 +1,6 @@
 Points
 
-This is a simple course management web application. It comes with basic build-in features that every course management system should have. included:
-	Instructors can: Create articles for their courses, Do course attendance flow, Insert result for exams, Send message to students, Upload 	files of their courses such as book, article, animations and ect.	
-	Learners can: See articles of courses, See results of exams, Download files that teachers uploaded, Send message to teachers.
+This is a simple course management web application. It comes with basic build-in features that every course management system should have, such as that instructors can create articles for their courses, do course attendance flow, insert result for exams, send message to students, upload files of their courses such as book, article, animation and ect, also learners can See articles of courses, see results of exams, download files that teachers uploaded and send message to teachers.
 
 setup
 
