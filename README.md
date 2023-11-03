@@ -1,10 +1,6 @@
 Points
 
-This is a simple course management web application. included some features.
-
-Teachers can: Create articles for their courses, Do course attendance flow, Insert result for exams, Send message to students, Upload files of their courses.
-
-Students can: See articles of courses, See results of exams, Download files that teachers uploaded, Send message to teachers.
+This is a simple course management web application. It comes with basic build-in features that every course management system should have, such as that instructors can create articles for their courses, do course attendance flow, insert result for exams, send message to students, upload files of their courses such as book, article, animation and ect, also learners can See articles of courses, see results of exams, download files that teachers uploaded and send message to teachers.
 
 setup
 
@@ -38,8 +34,9 @@ Insert data from csv files by running scripts, So:
  	(env)$ python manage.py runscript course_load
   	(env)$ python manage.py runscript day_load
    	(env)$ python manage.py runscript dp_load
-    	(env)$ python manage.py runscript result_load
-     	(env)$ python manage.py runscript exam_load
+    (env)$ python manage.py runscript result_load
+    (env)$ python manage.py runscript exam_load
+	
 
 Now:
 
@@ -47,12 +44,12 @@ Now:
 
 And navigate to http://127.0.0.1:8000/.
 
-You can log in as teacher by:
+You can log in as instructor:
 
  	username: 1111111111
   	password: testpass123
    
-Log in as student by:
+Log in as learner:
 
 	username: 3333333333
  	password: testpass123
