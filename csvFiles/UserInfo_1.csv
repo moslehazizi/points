@@ -1,5 +1,5 @@
-username,email,password,first_name,last_name,role,course,father_name,phone_number,course_name,owner,student
-1111111111,user1@email.com,testpass123,testname1,testlastname1,T,testcourse1,testfathername1,123456789,testcourse1,T,F
-2222222222,user2@email.com,testpass123,testname2,testlastname2,T,testcourse2,testfathername2,12345678,testcourse2,T,F
-3333333333,user3@email.com,testpass123,testname3,testlastname3,S,testcourse1,testfathername3,1234567,testcourse1,F,T
-4444444444,user4@email.com,testpass123,testname4,testlastname4,S,testcourse2,testfathername4,123456,testcourse2,F,T
+username,email,password,first_name,last_name,role,father_name,phone_number
+1111111111,user1@email.com,testpass123,testname1,testlastname1,T,testfathername1,123456789
+2222222222,user2@email.com,testpass123,testname2,testlastname2,T,testfathername2,12345678
+3333333333,user3@email.com,testpass123,testname3,testlastname3,S,testfathername3,1234567
+4444444444,user4@email.com,testpass123,testname4,testlastname4,S,testfathername4,123456
