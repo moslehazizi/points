@@ -47,12 +47,12 @@ Now:
 
 And navigate to http://127.0.0.1:8000/.
 
-You can log in as teacher by:
+You can log in as teacher:
 
  	username: 1111111111
   	password: testpass123
    
-Log in as student by:
+Log in as student:
 
 	username: 3333333333
  	password: testpass123
